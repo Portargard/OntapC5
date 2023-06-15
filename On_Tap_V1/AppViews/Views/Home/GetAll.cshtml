@@ -1,0 +1,70 @@
+﻿@model IEnumerable<AppData.Models.SanPham>
+
+@{
+    ViewData["Title"] = "GetAll";
+}
+
+<h1>GetAll</h1>
+
+<p>
+    <a asp-action="Add">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaSp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenSp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SlTon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NhaSx)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThuongHieu)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlTon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NhaSx)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThuongHieu)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Update", new {  id=item.Id  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.Id  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
